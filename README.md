@@ -104,6 +104,10 @@ Create a tarball using pixz for multi-core compression:
 
     tar -Ipixz -cf foo.tpxz foo/
 
+Set the number of cpus and compression level from the environment:
+
+    PIXZ_CPUS=4 PIXZ_COMPRESSION=9 tar -Ipixz -cf foo.tpxz foo/
+
 ### Specifying Input and Output
 
 These are the same (also work for `-x`, `-d` and `-l` as well):

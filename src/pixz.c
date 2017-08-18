@@ -32,6 +32,7 @@ static void usage(const char *msg) {
 "  pixz -l input.tpxz              # List tarball contents very fast\n"
 "  pixz -x path/to/file < input.tpxz | tar x  # Extract one file very fast\n"
 "  tar -Ipixz -cf output.tpxz dir  # Make tar use pixz automatically\n"
+"  PIXZ_CPUS=4 PIXZ_COMPRESSION=9 tar -Ipixz -cf output.tpxz dir  # Set the cpus (-p) and compression (-#) from the environment."
 "\n"
 "Input and output:\n"
 "  pixz < input > output.pxz       # Same as `pixz input output.pxz`\n"
