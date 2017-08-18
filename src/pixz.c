@@ -61,6 +61,20 @@ int main(int argc, char **argv) {
     bool extreme = false;
     pixz_op_t op = OP_WRITE;
     char *ipath = NULL, *opath = NULL;
+
+    char *envopt = getenv("PIXZ_CPUS");
+    if (envopt)
+    {
+        size_t cpus = atoi(envopt);
+        if (cpus > 0) gPipelineProcessMax = cpus;
+    }
+
+    envopt = getenv("PIXZ_COMPRESSION");
+    if (envopt)
+    {
+        uint32_t _level = atoi(envopt);
+        if (_level >= 0 && _level <= 9) level = _level;
+    }
     
     int ch;
 	char *optend;
